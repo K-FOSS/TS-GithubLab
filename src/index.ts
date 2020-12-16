@@ -1,20 +1,37 @@
 // src/index.ts
-import { timeout } from './Utils/timeout';
+import 'reflect-metadata';
+import fastify from 'fastify';
+import hyperid from 'hyperid';
+import { createApolloServer } from './Library/Apollo';
+import { config } from './Library/Config';
+import { logger, LogMode } from './Library/Logging';
 
-/**
- * Logs a greeting for the name after a 1.5 second delay.
- * @param name User you are greeting
- */
-async function sayHello(name = 'John'): Promise<void> {
-  console.log('Waiting 1.5 seconds then saying Hi');
+if (process.env.NODE_ENV !== 'production') {
+  const { config } = await import('dotenv');
 
-  await timeout(1500);
-
-  console.log(`Hello ${name}!`);
+  config();
 }
 
-console.log(`Starting TS-Core`);
+/**
+ * Fastify Web Server
+ */
+const webServer = fastify({
+  genReqId: () => hyperid().uuid,
+});
 
-await sayHello('K-FOSS');
+logger.log(LogMode.INFO, 'Creating Apollo Server');
+
+/**
+ * Apollo GraphQL Server
+ */
+const gqlServer = await createApolloServer();
+
+await webServer.register(gqlServer.createHandler());
+
+logger.log(LogMode.INFO, 'API Server setup.');
+
+await webServer.listen(config.bindPort, config.bindHost);
+
+logger.log(LogMode.INFO, `Listening on port ${config.bindPort}`);
 
 export {};

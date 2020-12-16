@@ -1,6 +1,7 @@
 {
-  "name": "TS-Core-TEMPLATE Container",
+  "name": "TS-GitHubLab Container",
   "dockerFile": "./Dockerfile.dev",
+  "forwardPorts": [8082],
   "settings": {
     "editor.formatOnSave": true
   },
@@ -15,7 +16,7 @@
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
   "workspaceFolder": "/workspace",
   "mounts": [
-    "source=ts-core-modules,target=/workspace/node_modules,type=volume"
+    "source=ts-githublab-modules,target=/workspace/node_modules,type=volume"
   ],
   "remoteEnv": {
     "SHELL": "/bin/bash"
