@@ -1,5 +1,5 @@
 // src/Modules/Repository/Languages/Language.ts
-import { Field, ID, ObjectType } from 'type-graphql';
+import { Field, Float, ID, ObjectType } from 'type-graphql';
 
 @ObjectType()
 export class Language {
@@ -9,6 +9,6 @@ export class Language {
   @Field()
   public name: string;
 
-  @Field(() => String)
-  public percentage: string;
+  @Field(() => Float)
+  public percentage: number;
 }
