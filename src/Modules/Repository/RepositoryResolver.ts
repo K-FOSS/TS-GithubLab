@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 // src/Modules/Repository/RepositoryResolver.ts
 import { Repository as GHRepo } from '@octokit/graphql-schema';
 import { Arg, Query, Resolver } from 'type-graphql';
 import { Service } from 'typedi';
 import { githubGQL } from '../../Library/Github';
-import { timeout } from '../../Utils/timeout';
 import { Language } from '../Languages/Language';
 import { Repository } from './Repository';
 

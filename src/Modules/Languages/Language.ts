@@ -1,5 +1,5 @@
 // src/Modules/Repository/Languages/Language.ts
-import { Field, Float, ID, ObjectType } from 'type-graphql';
+import { Field, ID, ObjectType } from 'type-graphql';
 
 @ObjectType()
 export class Language {
