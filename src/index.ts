@@ -1,10 +1,10 @@
 // src/index.ts
-import 'reflect-metadata';
+import './Utils/Setup';
 import fastify from 'fastify';
 import hyperid from 'hyperid';
 import { createApolloServer } from './Library/Apollo';
 import { config } from './Library/Config';
-import { logger, LogMode } from './Library/Logging';
+import { logger, LogMode } from './Library/Logger';
 
 if (process.env.NODE_ENV !== 'production') {
   const { config } = await import('dotenv');

@@ -10,7 +10,10 @@
     "dbaeumer.vscode-eslint",
     "github.vscode-codeql",
     "visualstudioexptteam.vscodeintellicode",
-    "eamodio.gitlens"
+    "eamodio.gitlens",
+    "gruntfuggly.todo-tree",
+    "redhat.vscode-yaml",
+    "coenraads.bracket-pair-colorizer"
   ],
   "remoteUser": "node",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
