@@ -21,7 +21,7 @@
     "@octokit/graphql": "^4.6.0",
     "@octokit/graphql-schema": "^10.21.0",
     "@sindresorhus/is": "^4.0.0",
-    "apollo-server": "^2.19.0",
+    "apollo-server": "^2.20.0",
     "apollo-server-fastify": "^3.0.0-alpha.3",
     "apollo-server-testing": "^2.19.0",
     "bullmq": "^1.14.4",
