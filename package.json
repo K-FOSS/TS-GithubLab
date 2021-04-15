@@ -23,7 +23,7 @@
     "@sindresorhus/is": "^4.0.0",
     "apollo-server": "^2.19.0",
     "apollo-server-fastify": "^3.0.0-alpha.3",
-    "apollo-server-testing": "^2.19.0",
+    "apollo-server-testing": "^2.23.0",
     "bullmq": "^1.14.4",
     "dotenv": "^8.2.0",
     "fastify": "^3.11.0",
